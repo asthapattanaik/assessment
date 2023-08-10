@@ -1,0 +1,56 @@
+/* assessment-header.component.css */
+.header-container {
+  display: flex;
+  height: 70px;
+  padding: 0px 20px;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 12px 12px 0px 0px;
+  background: #FFF;
+  border-bottom: 1px solid var(--system-divider, #DDE5EA);
+}
+
+.title-container {
+    display: flex;
+align-items: center;
+gap: 20px;
+align-self: stretch;
+  
+}
+
+.title-container p {
+    color: var(--primary-color);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+}
+
+.mini-vertical-line {
+  width: 2px;
+  height: 46px;
+  background-color: #DADCE0;
+  
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  padding: 20px 12px;
+}
+
+.nav-links a {
+  margin-right: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+
+.nav-links a.selected {
+  background-color: #007bff;
+  color: #fff;
+}

@@ -1,0 +1,53 @@
+<div class="assessments">
+  <p class="my-assessment-heading">My Assessment</p>
+  <div class="my-assessments">
+    <div class="new-assessment-box" (click)="openBottomSheet()">
+      <div class="icon-wrapper">
+        <mat-icon svgIcon="add"></mat-icon>
+      </div>
+      <p class="new-assessment-text">New Assessment</p>
+      <p class="new-assessment-desc">
+        From here you can add questions of multiple types like MCQs, subjective
+        (text or paragraph)!
+      </p>
+    </div>
+    <div *ngFor="let name of namesArray; let i = index" class="assessment-card">
+      <div class="assessment-details">
+        <div class="assessment-icon">
+          <mat-icon svgIcon="assessment"></mat-icon>
+        </div>
+        <div class="assessment-name-div">
+          <span class="assessment-name">{{ name }}</span>
+        </div>
+        <div class="assessment-purpose">
+          <span class="purpose">{{ purposeArray[i] }}</span>
+          <span class="mini-vertical-line"></span>
+          <mat-icon svgIcon="calendar" class="calendar-icon"></mat-icon>
+          <span class="date">{{ formattedDate }}</span>
+        </div>
+        <div class="dashed-line"></div>
+        <div class = "assessment-details-footer">
+          <div class = "details-footer">
+            <div class=" duration">
+              <span class = "footer-text-1">{{durationArray[i]}}</span>
+              <span class = "footer-text-2">Duration</span>
+            </div>
+            <div class=" duration">
+              <span class = "footer-text-1">{{noOfQuestionsArray[i]}}</span>
+              <span class = "footer-text-2">Questions</span>
+            </div>
+          </div>
+          <div class = "details-footer">
+            <div class="share-button" (click)="sharebuttonClicked()">
+              <mat-icon svgIcon="link" class="link-icon"></mat-icon>
+              <span class="share-text">Share</span> 
+            </div>
+            <div class = "avatar">
+              <span class="initials">AB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

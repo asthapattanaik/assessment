@@ -1,0 +1,31 @@
+<div class = "form-header">
+    <span class = "heading">Create new assesment</span>
+    <mat-icon svgIcon="cancel" (click) = "closeBottomSheet()"></mat-icon>
+  </div>
+  <div class = "form-body">
+    <label class = "labels">Name of the assessment</label>
+    <input type = "text" placeholder="Type here" class="text-field" [(ngModel)]="name" required>
+
+    <label class = "labels">Purpose of the test is </label>
+    <input type = "text" placeholder="Type here" class="text-field" [(ngModel)]="purpose" required>
+
+    <label class = "labels">Description</label>
+    <input type = "text" placeholder="Description" class="text-field">
+
+    <label class = "labels">Skills</label>
+    <input type = "text" placeholder="Type here" class="text-field">
+
+    <label class = "labels">Duration of assessment</label>
+    <input type = "text" placeholder="HH:MM" class="text-field" [(ngModel)]="duration" required>
+
+    <label class = "labels">Total questions</label>
+    <input type = "text" placeholder="Tyoe here" class="text-field" [(ngModel)]="noOfQuestions" required>
+    <div class = "submit-div">
+      <button type = "submit" class = "submit-button" (click) = "submitForm()">Submit</button>
+    </div>
+
+  </div>
+
+
+
+

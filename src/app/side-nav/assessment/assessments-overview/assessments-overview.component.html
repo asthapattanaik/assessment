@@ -1,0 +1,92 @@
+<!-- assessments-overview.component.html -->
+<div class="overview-container">
+  <div class="overview-heading">
+    <p>Assessments Overview</p>
+  </div>
+  <table class="overview-table">
+    <colgroup>
+      <col class="column1" />
+      <col class="column2" />
+      <col class="column3" />
+      <col class="column4" />
+    </colgroup>
+    <tr>
+      <th class="with-border">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Total Assessment</p></div>
+
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="agenda"></mat-icon>
+            </div>
+            <p class="data">{{totalAssessment}}</p>
+          </div>
+        </div>
+      </th>
+      <th class="with-border">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Candidates</p></div>
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="candidates"></mat-icon>
+            </div>
+            <div class="col-data">
+              <p class="data">{{totalCandidates}} <span class="green">+89</span></p>
+              <p class="below-number">Total Candidates</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="col-data">
+              <p class="data">{{attemptedCandidates}} <span class="green">+89</span></p>
+              <p class="below-number">Who Attempted</p>
+            </div>
+
+          </div>
+        </div>
+      </th>
+      <th class="with-border">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Candidates Source</p></div>
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="source"></mat-icon>
+            </div>
+            <div class="col-data">
+              <p class="data">{{email}} <span class="green">+89</span></p>
+              <p class="below-number">email</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="col-data">
+              <p class="data">{{socialShare}} <span class="green">+89</span></p>
+              <p class="below-number">Social Share</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="col-data">
+              <p class="data">{{uniqueLink}} <span class="green">+89</span></p>
+              <p class="below-number">Unique Link</p>
+            </div>
+
+          </div>
+        </div>
+      </th>
+      <th class="last-col">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Total Purpose</p></div>
+
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="link"></mat-icon>
+            </div>
+            <p class="data">{{totalPurpose}}</p>
+          </div>
+        </div>
+      </th>
+     
+    </tr>
+  </table>
+</div>

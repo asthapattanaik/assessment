@@ -1,0 +1,68 @@
+<mat-sidenav-container class="side-nav-container">
+    <mat-sidenav mode="side" opened>
+      <div class="sidenav-contents">
+        <!-- Dashboard -->
+        <div
+        class="option-frame"
+        [ngClass]="{ selected: selectedOption === 'Dashboard' }"
+        (click)="selectOption('Dashboard')"
+        routerLink="/dashboard"
+      >
+        <div class="iconWrapper">
+          <mat-icon svgIcon="dashboard"></mat-icon>
+        </div>
+        <span class="option-name">Dashboard</span>
+      </div>
+      <!-- Assessment -->
+        <div
+          class="option-frame"
+          [ngClass]="{ selected: selectedOption === 'Assessment' }"
+          (click)="selectOption('Assessment')"
+          routerLink="/assessment"
+        >
+          <div class="iconWrapper">
+            <mat-icon svgIcon="assessment"></mat-icon>
+          </div>
+          <span class="option-name">Assessment</span>
+        </div>
+        <!-- My Library -->
+        <div
+          class="option-frame"
+          [ngClass]="{ selected: selectedOption === 'My Library' }"
+          (click)="selectOption('My Library')"
+          routerLink="/my-library"
+        >
+          <div class="iconWrapper">
+            <mat-icon svgIcon="my-library"></mat-icon>
+          </div>
+          <span class="option-name">My Library</span>
+        </div>
+        <div class="option-frame">
+          <div class="iconWrapper">
+            <div class="dotted-line"></div>
+          </div>
+  
+      <div class="admin-badge">Admin</div>
+        </div>
+
+        <!-- Round Status -->
+        <div
+          class="option-frame"
+          [ngClass]="{ selected: selectedOption === 'Round Status' }"
+          (click)="selectOption('Round Status')"
+          routerLink="/round-status"
+        >
+          <div class="iconWrapper">
+            <mat-icon svgIcon="round-status"></mat-icon>
+          </div>
+          <span class="option-name">Round Status</span>
+        </div>
+      </div>
+    </mat-sidenav>
+    <div class = "main-content">
+      <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+
+
+  
