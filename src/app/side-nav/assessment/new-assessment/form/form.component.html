@@ -1,25 +1,35 @@
+<!-- form to add a new assessment -->
 <div class = "form-header">
     <span class = "heading">Create new assesment</span>
     <mat-icon svgIcon="cancel" (click) = "closeBottomSheet()"></mat-icon>
   </div>
   <div class = "form-body">
+    <!-- Label and input for assessment name -->
     <label class = "labels">Name of the assessment</label>
     <input type = "text" placeholder="Type here" class="text-field" [(ngModel)]="name" required>
-
+    
+    
+  <!-- Label and input for assessment purpose -->
     <label class = "labels">Purpose of the test is </label>
     <input type = "text" placeholder="Type here" class="text-field" [(ngModel)]="purpose" required>
-
+    
+    <!-- Label and input for assessment description -->
     <label class = "labels">Description</label>
     <input type = "text" placeholder="Description" class="text-field">
 
+    <!-- Label and input for assessment skills -->
     <label class = "labels">Skills</label>
     <input type = "text" placeholder="Type here" class="text-field">
-
+  
+    <!-- Label and input for assessment duration -->
     <label class = "labels">Duration of assessment</label>
     <input type = "text" placeholder="HH:MM" class="text-field" [(ngModel)]="duration" required>
-
+ 
+    <!-- Label and input for total number of questions -->
     <label class = "labels">Total questions</label>
     <input type = "text" placeholder="Tyoe here" class="text-field" [(ngModel)]="noOfQuestions" required>
+   
+   <!-- Submit button -->
     <div class = "submit-div">
       <button type = "submit" class = "submit-button" (click) = "submitForm()">Submit</button>
     </div>

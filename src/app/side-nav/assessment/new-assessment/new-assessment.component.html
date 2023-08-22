@@ -1,5 +1,16 @@
 <div class="assessments">
-  <p class="my-assessment-heading">My Assessment</p>
+  <!-- Heading for "My Assessment" section -->
+  <div class="my-assessment-heading-container">
+    <p class="my-assessment-heading">My Assessment</p>
+    <!-- Icons for mobile view -->
+    <div class="my-assessment-heading-icons" *ngIf="isHandset$ | async">
+      <mat-icon svgIcon="search"></mat-icon>
+      <mat-icon svgIcon="filter"></mat-icon>
+      <mat-icon svgIcon="bar" (click)="toggleTableVisibility()"></mat-icon>
+    </div>
+  </div>
+
+  <!-- Container for individual assessments -->
   <div class="my-assessments">
     <div class="new-assessment-box" (click)="openBottomSheet()">
       <div class="icon-wrapper">
@@ -11,6 +22,8 @@
         (text or paragraph)!
       </p>
     </div>
+
+    <!-- Loop through assessment data to display each assessment card -->
     <div *ngFor="let name of namesArray; let i = index" class="assessment-card">
       <div class="assessment-details">
         <div class="assessment-icon">
@@ -26,23 +39,26 @@
           <span class="date">{{ formattedDate }}</span>
         </div>
         <div class="dashed-line"></div>
-        <div class = "assessment-details-footer">
-          <div class = "details-footer">
-            <div class=" duration">
-              <span class = "footer-text-1">{{durationArray[i]}}</span>
-              <span class = "footer-text-2">Duration</span>
+        <div class="assessment-details-footer">
+          <div class="details-footer">
+            <!-- Assessment duration -->
+            <div class="duration">
+              <span class="footer-text-1">{{ durationArray[i] }}</span>
+              <span class="footer-text-2">Duration</span>
             </div>
-            <div class=" duration">
-              <span class = "footer-text-1">{{noOfQuestionsArray[i]}}</span>
-              <span class = "footer-text-2">Questions</span>
+
+            <!-- Number of questions -->
+            <div class="duration">
+              <span class="footer-text-1">{{ noOfQuestionsArray[i] }}</span>
+              <span class="footer-text-2">Questions</span>
             </div>
           </div>
-          <div class = "details-footer">
+          <div class="details-footer">
             <div class="share-button" (click)="sharebuttonClicked()">
-              <mat-icon svgIcon="link" class="link-icon"></mat-icon>
-              <span class="share-text">Share</span> 
+              <mat-icon svgIcon="share" class="link-icon"></mat-icon>
+              <span class="share-text">Share</span>
             </div>
-            <div class = "avatar">
+            <div class="avatar">
               <span class="initials">AB</span>
             </div>
           </div>

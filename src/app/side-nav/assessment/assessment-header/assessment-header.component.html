@@ -1,9 +1,18 @@
-<!-- assessment-header.component.html -->
 <div class="header-container">
+  <!-- Sandwich Icon Container (visible only on mobile & tab) -->
+  <div *ngIf="isHandset$ | async" class="sandwich-icon-container">
+    <button mat-icon-button (click)="onToggleSidenavClick()">
+      <mat-icon class = "menu-icon">menu</mat-icon>
+    </button>
+  </div>
+
+     <!-- Title Container -->
     <div class="title-container">
       <p>Assessment</p>
       <div class="mini-vertical-line"></div>
     </div>
+
+    <!-- Navigation Links Container -->
     <div class="nav-links">
       <a routerLink="/assessment/overview" routerLinkActive="selected">My Assessments</a>
     </div>

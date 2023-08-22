@@ -1,9 +1,12 @@
-<!-- assessments-overview.component.html -->
 <div class="overview-container">
-  <div class="overview-heading">
+  <!-- Overview Heading (Visible on larger screens) -->
+  <div class="overview-heading" *ngIf="!(isHandset$ | async)">
     <p>Assessments Overview</p>
   </div>
-  <table class="overview-table">
+
+  <!-- Overview Table (Visible on larger screens) -->
+  <table class="overview-table" *ngIf="!(isHandset$ | async)">
+    <!-- Table Columns -->
     <colgroup>
       <col class="column1" />
       <col class="column2" />
@@ -11,6 +14,7 @@
       <col class="column4" />
     </colgroup>
     <tr>
+      <!-- Total Assessment Column -->
       <th class="with-border">
         <div class="overview-frame">
           <div class="column-heading"><p>Total Assessment</p></div>
@@ -19,10 +23,12 @@
             <div class="icon-wrapper">
               <mat-icon svgIcon="agenda"></mat-icon>
             </div>
-            <p class="data">{{totalAssessment}}</p>
+            <p class="data">{{ totalAssessment }}</p>
           </div>
         </div>
       </th>
+
+      <!-- Candidates Column -->
       <th class="with-border">
         <div class="overview-frame">
           <div class="column-heading"><p>Candidates</p></div>
@@ -31,20 +37,26 @@
               <mat-icon svgIcon="candidates"></mat-icon>
             </div>
             <div class="col-data">
-              <p class="data">{{totalCandidates}} <span class="green">+89</span></p>
+              <p class="data">
+                {{ totalCandidates }} <span class="green">+89</span>
+              </p>
               <p class="below-number">Total Candidates</p>
             </div>
 
             <div class="vertical-line"></div>
 
             <div class="col-data">
-              <p class="data">{{attemptedCandidates}} <span class="green">+89</span></p>
+              <p class="data">
+                {{ attemptedCandidates }} <span class="green">+89</span>
+              </p>
               <p class="below-number">Who Attempted</p>
             </div>
-
           </div>
         </div>
+        <div class="horizontal-line"></div>
       </th>
+
+      <!-- Candidates Source Column -->
       <th class="with-border">
         <div class="overview-frame">
           <div class="column-heading"><p>Candidates Source</p></div>
@@ -53,27 +65,32 @@
               <mat-icon svgIcon="source"></mat-icon>
             </div>
             <div class="col-data">
-              <p class="data">{{email}} <span class="green">+89</span></p>
+              <p class="data">{{ email }} <span class="green">+89</span></p>
               <p class="below-number">email</p>
             </div>
 
             <div class="vertical-line"></div>
 
             <div class="col-data">
-              <p class="data">{{socialShare}} <span class="green">+89</span></p>
+              <p class="data">
+                {{ socialShare }} <span class="green">+89</span>
+              </p>
               <p class="below-number">Social Share</p>
             </div>
 
             <div class="vertical-line"></div>
 
             <div class="col-data">
-              <p class="data">{{uniqueLink}} <span class="green">+89</span></p>
+              <p class="data">
+                {{ uniqueLink }} <span class="green">+89</span>
+              </p>
               <p class="below-number">Unique Link</p>
             </div>
-
           </div>
         </div>
       </th>
+
+      <!-- Total Purpose Column -->
       <th class="last-col">
         <div class="overview-frame">
           <div class="column-heading"><p>Total Purpose</p></div>
@@ -82,11 +99,117 @@
             <div class="icon-wrapper">
               <mat-icon svgIcon="link"></mat-icon>
             </div>
-            <p class="data">{{totalPurpose}}</p>
+            <p class="data">{{ totalPurpose }}</p>
           </div>
         </div>
       </th>
-     
     </tr>
+  </table>
+
+  <!-- Overview Heading (Visible on smaller screens with a visible table) -->
+  <div class="overview-heading" *ngIf="(isHandset$ | async) && isTableVisible">
+    <p>Assessments Overview</p>
+  </div>
+  <!-- Mobile Version Table for Total Assessment and Total Purpose -->
+  <table
+    class="table-container-mobile-1"
+    *ngIf="(isHandset$ | async) && isTableVisible"
+  >
+    <tr>
+      <!-- Total Assessment Column -->
+      <th class="with-border">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Total Assessment</p></div>
+
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="agenda"></mat-icon>
+            </div>
+            <p class="data">{{ totalAssessment }}</p>
+          </div>
+        </div>
+      </th>
+      <!-- Total Purpose Column -->
+      <th class="last-col">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Total Purpose</p></div>
+
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="link"></mat-icon>
+            </div>
+            <p class="data">{{ totalPurpose }}</p>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </table>
+
+  <!-- Mobile Version Table for Candidates -->
+  <table
+    *ngIf="(isHandset$ | async) && isTableVisible"
+    class="table-container-mobile-2"
+  >
+    <tr>
+      <th class="data-container">
+        <div class="overview-frame">
+          <div class="column-heading"><p>Candidates</p></div>
+          <div class="column-data">
+            <div class="icon-wrapper">
+              <mat-icon svgIcon="candidates"></mat-icon>
+            </div>
+            <div class="col-data">
+              <p class="data">
+                {{ totalCandidates }} <span class="green">+89</span>
+              </p>
+              <p class="below-number">Total Candidates</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="col-data">
+              <p class="data">
+                {{ attemptedCandidates }} <span class="green">+89</span>
+              </p>
+              <p class="below-number">Who Attempted</p>
+            </div>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </table>
+  <!-- Mobile Version Table for Candidates Source -->
+  <table
+    *ngIf="(isHandset$ | async) && isTableVisible"
+    class="table-container-mobile-3"
+  >
+    <th class="data-container">
+      <div class="overview-frame">
+        <div class="column-heading"><p>Candidates Source</p></div>
+        <div class="column-data">
+          <div class="icon-wrapper">
+            <mat-icon svgIcon="source"></mat-icon>
+          </div>
+          <div class="col-data">
+            <p class="data">{{ email }} <span class="green">+89</span></p>
+            <p class="below-number">email</p>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <div class="col-data">
+            <p class="data">{{ socialShare }} <span class="green">+89</span></p>
+            <p class="below-number">Social Share</p>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <div class="col-data">
+            <p class="data">{{ uniqueLink }} <span class="green">+89</span></p>
+            <p class="below-number">Unique Link</p>
+          </div>
+        </div>
+      </div>
+    </th>
   </table>
 </div>

@@ -11,36 +11,42 @@ import { MatIconRegistry } from '@angular/material/icon';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
+  // Constructor for the form component
+  constructor(
+    private _bottomSheetRef: MatBottomSheetRef<FormComponent>,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      'cancel',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../assets/icons/cut.svg'
+      )
+    );
+  }
 
-  constructor(private _bottomSheetRef: MatBottomSheetRef<FormComponent>, private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
-      this.matIconRegistry.addSvgIcon(
-        'cancel',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          '../assets/icons/cut.svg'
-        )
-      );
-    }
+  // Form fields
+  name: string = '';
+  purpose: string = '';
+  duration: string = '';
+  noOfQuestions: number;
 
-    name: string = '';
-    purpose: string = '';
-    duration: string = '';
-    noOfQuestions : number;
-  
-    submitForm() {
-      const formData = {
-        name: this.name,
-        purpose: this.purpose,
-        duration: this.duration,
-        noOfQuestions: this.noOfQuestions
-      };
-  
-      this._bottomSheetRef.dismiss(formData);
-    }
+  // Function to submit the form
+  submitForm() {
+    // Creating form data object
+    const formData = {
+      name: this.name,
+      purpose: this.purpose,
+      duration: this.duration,
+      noOfQuestions: this.noOfQuestions,
+    };
 
+    // Dismissing the bottom sheet and passing form data
+    this._bottomSheetRef.dismiss(formData);
+  }
 
-
-    closeBottomSheet(){
-      this._bottomSheetRef.dismiss();
-    }
+  // Function to close the bottom sheet without submitting
+  closeBottomSheet() {
+    this._bottomSheetRef.dismiss();
+  }
 }

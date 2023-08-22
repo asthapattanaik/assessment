@@ -1,8 +1,13 @@
 <mat-sidenav-container class="side-nav-container">
-    <mat-sidenav mode="side" opened>
-      <div class="sidenav-contents">
-        <!-- Dashboard -->
-        <div
+  <!-- Side Nav -->
+  <mat-sidenav [mode]="sideNavMode" [opened]="isSideNavOpen">
+    <div class="sidenav-contents">
+      <div *ngIf="isHandset$ | async" class="side-nav-header">
+        <p class="menu">Menu</p>
+        <mat-icon svgIcon="cross" (click)="closeSideNav()"></mat-icon>
+      </div>
+      <!-- Dashboard -->
+      <div
         class="option-frame"
         [ngClass]="{ selected: selectedOption === 'Dashboard' }"
         (click)="selectOption('Dashboard')"
@@ -14,55 +19,55 @@
         <span class="option-name">Dashboard</span>
       </div>
       <!-- Assessment -->
-        <div
-          class="option-frame"
-          [ngClass]="{ selected: selectedOption === 'Assessment' }"
-          (click)="selectOption('Assessment')"
-          routerLink="/assessment"
-        >
-          <div class="iconWrapper">
-            <mat-icon svgIcon="assessment"></mat-icon>
-          </div>
-          <span class="option-name">Assessment</span>
+      <div
+        class="option-frame"
+        [ngClass]="{ selected: selectedOption === 'Assessment' }"
+        (click)="selectOption('Assessment')"
+        routerLink="/assessment"
+      >
+        <div class="iconWrapper">
+          <mat-icon svgIcon="assessment"></mat-icon>
         </div>
-        <!-- My Library -->
-        <div
-          class="option-frame"
-          [ngClass]="{ selected: selectedOption === 'My Library' }"
-          (click)="selectOption('My Library')"
-          routerLink="/my-library"
-        >
-          <div class="iconWrapper">
-            <mat-icon svgIcon="my-library"></mat-icon>
-          </div>
-          <span class="option-name">My Library</span>
-        </div>
-        <div class="option-frame">
-          <div class="iconWrapper">
-            <div class="dotted-line"></div>
-          </div>
-  
-      <div class="admin-badge">Admin</div>
-        </div>
-
-        <!-- Round Status -->
-        <div
-          class="option-frame"
-          [ngClass]="{ selected: selectedOption === 'Round Status' }"
-          (click)="selectOption('Round Status')"
-          routerLink="/round-status"
-        >
-          <div class="iconWrapper">
-            <mat-icon svgIcon="round-status"></mat-icon>
-          </div>
-          <span class="option-name">Round Status</span>
-        </div>
+        <span class="option-name">Assessment</span>
       </div>
-    </mat-sidenav>
-    <div class = "main-content">
-      <router-outlet></router-outlet>
+      <!-- My Library -->
+      <div
+        class="option-frame"
+        [ngClass]="{ selected: selectedOption === 'My Library' }"
+        (click)="selectOption('My Library')"
+        routerLink="/my-library"
+      >
+        <div class="iconWrapper">
+          <mat-icon svgIcon="my-library"></mat-icon>
+        </div>
+        <span class="option-name">My Library</span>
+      </div>
+
+      <!-- Admin Section -->
+      <div class="option-frame">
+        <div class="iconWrapper">
+          <div class="dotted-line"></div>
+        </div>
+        <div class="admin-badge">Admin</div>
+      </div>
+
+      <!-- Round Status -->
+      <div
+        class="option-frame"
+        [ngClass]="{ selected: selectedOption === 'Round Status' }"
+        (click)="selectOption('Round Status')"
+        routerLink="/round-status"
+      >
+        <div class="iconWrapper">
+          <mat-icon svgIcon="round-status"></mat-icon>
+        </div>
+        <span class="option-name">Round Status</span>
+      </div>
     </div>
+  </mat-sidenav>
+
+ <!-- Main Content Area -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>
-
-
-  
