@@ -20,7 +20,7 @@ export class FormComponent {
     this.matIconRegistry.addSvgIcon(
       'cancel',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/cut.svg'
+        'assets/icons/cut.svg'
       )
     );
   }

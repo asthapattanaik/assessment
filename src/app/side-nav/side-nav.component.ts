@@ -40,42 +40,42 @@ export class SideNavComponent implements OnInit {
     this.matIconRegistry.addSvgIcon(
       'dashboard',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/dashboard.svg'
+        'assets/icons/dashboard.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'assessment',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/note_alt.svg'
+        'assets/icons/note_alt.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'my-library',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/quiz.svg'
+        'assets/icons/quiz.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'round-status',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/admin_meds.svg'
+        'assets/icons/admin_meds.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'menu',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/menu.svg'
+        'assets/icons/menu.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'cross',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/cross.svg'
+        'assets/icons/cross.svg'
       )
     );
 

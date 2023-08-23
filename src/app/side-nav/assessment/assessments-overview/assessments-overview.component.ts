@@ -29,28 +29,28 @@ export class AssessmentsOverviewComponent implements OnInit {
     this.matIconRegistry.addSvgIcon(
       'agenda',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/agenda.svg'
+        'assets/icons/agenda.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'candidates',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/candidates.svg'
+        'assets/icons/candidates.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'source',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/source.svg'
+        'assets/icons/source.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'link',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/link.svg'
+        'assets/icons/link.svg'
       )
     );
   }

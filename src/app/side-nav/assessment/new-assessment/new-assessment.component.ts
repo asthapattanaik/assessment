@@ -30,48 +30,48 @@ export class NewAssessmentComponent {
     this.matIconRegistry.addSvgIcon(
       'add',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/add.svg'
+        'assets/icons/add.svg'
       )
     );
     this.matIconRegistry.addSvgIcon(
       'assessment',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/assessment.svg'
+        'assets/icons/assessment.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'calendar',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/calendar.svg'
+        'assets/icons/calendar.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'share',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/share.svg'
+        'assets/icons/share.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'filter',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/filter.svg'
+        'assets/icons/filter.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'bar',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/bar.svg'
+        'assets/icons/bar.svg'
       )
     );
 
     this.matIconRegistry.addSvgIcon(
       'search',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        '../assets/icons/search.svg'
+        'assets/icons/search.svg'
       )
     );
   }
