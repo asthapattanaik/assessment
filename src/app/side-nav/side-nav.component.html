@@ -43,16 +43,24 @@
         <span class="option-name">My Library</span>
       </div>
 
-      <!-- Admin Section -->
-      <div class="option-frame">
+      <!-- Admin Section-->
+      <div *ngIf="!isMobile" class="option-frame">
         <div class="iconWrapper">
           <div class="dotted-line"></div>
         </div>
         <div class="admin-badge">Admin</div>
       </div>
 
+      <!-- dotted line for handsets-->
+      <div *ngIf="isMobile" class="option-frame-admin">
+        <div class="iconWrapper">
+          <div class="dotted-line"></div>
+        </div>
+      </div>
+
       <!-- Round Status -->
       <div
+        *ngIf="!isMobile"
         class="option-frame"
         [ngClass]="{ selected: selectedOption === 'Round Status' }"
         (click)="selectOption('Round Status')"
@@ -63,10 +71,26 @@
         </div>
         <span class="option-name">Round Status</span>
       </div>
+      <div
+        *ngIf="isMobile"
+        class="option-frame"
+        [ngClass]="{ selected: selectedOption === 'Round Status' }"
+        (click)="selectOption('Round Status')"
+        routerLink="/round-status"
+      >
+        <div class="iconWrapper">
+          <mat-icon svgIcon="round-status"></mat-icon>
+        </div>
+        <span class="option-name">Round Status</span>
+        <div class="admin-badge-mobile">
+          <div class="admin-badge">Admin</div>
+        </div>
+        
+      </div>
     </div>
   </mat-sidenav>
 
- <!-- Main Content Area -->
+  <!-- Main Content Area -->
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>

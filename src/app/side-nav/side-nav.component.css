@@ -134,17 +134,18 @@
     width: auto;
     height: 50px;
     border-radius: 8px;
-    justify-content:flex-start;
+    justify-content:left;
   }
 
   .option-frame-admin{
     display: flex;
     flex-direction: column;
-    width: auto;
-    height: 50px;
-    border-radius: 8px;
-    justify-content:flex-start;
+    justify-content:space-between;
     padding-left: 20px;
+  }
+  
+  .admin-badge-mobile{
+    padding-left: 30%;
   }
 
   .option-frame:focus {
@@ -153,15 +154,16 @@
 
   .dotted-line {
     border-top: 1px dotted #ccc;
-    width: 150px;
+    width: 250px;
     stroke-width: 1px;
     stroke: var(--system-stroke, #bacbd5);
+    flex: 1;
   }
 
   .round-status{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
 }
